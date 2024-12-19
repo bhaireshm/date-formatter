@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Use modern JavaScript features
+    "module": "ESNext", // Output ES Module format
+    "moduleResolution": "Node", // Resolve modules in Node.js style
+    "lib": ["ES2022", "DOM"], // Include ES2020 and DOM typings for browser support
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory for source files
+    "declaration": true, // Generate `.d.ts` type declaration files
+    "strict": true, // Enable strict type-checking options
+    "esModuleInterop": true, // Enable interoperability between CommonJS and ES modules
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "resolveJsonModule": true, // Allow importing JSON modules
+    "allowSyntheticDefaultImports": true, // Enable default imports for CommonJS modules
+    "composite": false, // Disable composite builds
+    "isolatedModules": true, // Ensure file-level module isolation
+    "sourceMap": true, // Generate source maps for debugging
+    "typeRoots": ["./node_modules/@types"], // Include typings from `node_modules`
+    "allowJs": false, // Do not allow JavaScript files
+    "useDefineForClassFields": true // Ensure compatibility with modern class features
+  },
+  "include": ["src/**/*"], // Include all files in the `src` folder
+  "exclude": ["node_modules", "dist"], // Exclude `node_modules` and `dist` folders
+  "tsBuildInfoFile": "./dist/.tsbuildinfo" // Save incremental build info in `dist`
+}
