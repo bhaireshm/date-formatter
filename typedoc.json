@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "githubPages": true,
+  "name": "Date Formatter",
+  "out": "D:\\My_Codes\\date-formatter\\docs",
+  "sort": [
+    "alphabetical"
+  ],
+  "tsconfig": "./tsconfig.json",
+  "entryPoints": [
+    "D:\\My_Codes\\date-formatter\\src\\index.ts"
+  ]
+}

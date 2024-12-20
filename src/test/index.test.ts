@@ -25,11 +25,13 @@ describe('DateFormatter', () => {
     expect(formatter.format('yyyy-MM-dd HH:mm:ss Z', { gmt: true })).toBe('2022-07-25 20:00:00 GMT');
   });
 
-  // it('should handle timezone offsets', () => {
-  //   const date = new Date('2022-07-25T14:30:00.000Z');
-  //   const formatter = new DateFormatter(date);
-  //   expect(formatter.format('yyyy-MM-dd HH:mm:ss', { timezoneOffset: 3600 })).toBe('2022-07-25 15:30:00');
-  // });
+
+  // TODO: breaking here
+  it('should handle timezone offsets', () => {
+    const date = new Date('2022-07-25T14:30:00.000Z');
+    const formatter = new DateFormatter(date);
+    expect(formatter.format('yyyy-MM-dd HH:mm:ss', { timezoneOffset: 3600 })).toBe('2022-07-25 15:30:00');
+  });
 
   // it('should handle invalid dates', () => {
   //   const date = new Date(' invalid date ');
