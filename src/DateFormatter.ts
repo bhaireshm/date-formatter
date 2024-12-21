@@ -58,7 +58,7 @@ export class DateFormatter extends Date {
     // Apply timezone offset if provided
     if (timezoneOffset !== undefined) {
       // TODO: Check timezone
-      date = new Date(this.getTime() + timezoneOffset);
+      date = new Date(this.getTime() + (timezoneOffset * 60 * 1000));
     }
 
     const getMethod = (method: string): (() => number) => {
@@ -85,7 +85,6 @@ export class DateFormatter extends Date {
 
     const M = getMethod("Month")();
     const y = getMethod("FullYear")();
-    console.log("file: DateFormatter.ts:96  M", M);
 
     const flags: Record<string, () => string> = {
       // a: () => (H < 12 ? DateFormatter.i18n.timeNames[0] : DateFormatter.i18n.timeNames[1]),
@@ -108,12 +107,12 @@ export class DateFormatter extends Date {
       s: () => String(s),
       ss: () => DateFormatter.pad(s),
       l: () => DateFormatter.pad(L, 3),
-      
+
       t: () => (H < 12 ? DateFormatter.i18n.timeNames[0] : DateFormatter.i18n.timeNames[1]),
       tt: () => (H < 12 ? DateFormatter.i18n.timeNames[2] : DateFormatter.i18n.timeNames[3]),
       T: () => (H < 12 ? DateFormatter.i18n.timeNames[4] : DateFormatter.i18n.timeNames[5]),
       TT: () => (H < 12 ? DateFormatter.i18n.timeNames[6] : DateFormatter.i18n.timeNames[7]),
-      
+
       S: () => DateFormatter.getSuffix(d),
       Z: () => (gmt ? "GMT" : utc ? "UTC" : ""),
     };
